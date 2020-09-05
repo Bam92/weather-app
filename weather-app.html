@@ -33,20 +33,40 @@ background-position: center;
     <section>
         <h1>Weather app</h1>
         <h3>City: New York, US</h3>
+        
+        <div class="temperature">
+            <p>Today's temp</p>
+            <p id="main">Temp: <span></span> <sup>°</sup>C</p>
+            <p id="min">Min: <span></span> <sup>°</sup>C</p>
+            <p id="max">Max: <span></span> <sup>°</sup>C</p>
+        </div>
     </section>
     
 
     <script>
+        // Get DOM elts
+        const mainTemp = document.querySelector("#main span")
+        const min = document.querySelector("#min span")
+        const max = document.querySelector("#max span")
+
         const isOk = response => response.ok ? response.json() : Promise.reject(new Error('Failed to load data from server'))
         const apiKey = "a1765436a53fce9de8bc00af314f1102"
-        const city = "Kinshasa"
+        const city = "New York"
 
 fetch(`https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`)
 .then(isOk) // <= Use `isOk` function here key a1765436a53fce9de8bc00af314f1102
 .then(data => {
-  console.log(data) // Prints result from `response.json()`
+    const { main } = data
+
+    mainTemp.textContent = main.temp
+    min.textContent = main.temp_min
+    max.textContent = main.temp_max
+
+    console.log(data) // Prints result from `response.json()`
 })
 .catch(error => console.error(error))
+
+// main.textContent = data.temp
     </script>
 </body>
 </html>
