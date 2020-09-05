@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    section {
+        height: 600px;
+    width: 100vw;
+        color: white;
+background: url("1.jpg");
+/* overflow: hidden; */
+background-size: cover;
+background-position: center;
+/* background: #58ffd2; */
+/* background: linear-gradient(rgba(29, 38, 113, 0.9), rgba(195, 55, 100, 0.9)); */
+    }
+
+    section::before {
+        content: "";
+        background: #58ffd2;
+        width: 100%;
+        opacity: .5;
+    }
+
+    /* img {
+        object-fit: cover;
+    } */
+</style>
+<body>
+    <section>
+        <h1>Weather app</h1>
+        <h3>City: New York, US</h3>
+    </section>
+    
+
+    <script>
+        const isOk = response => response.ok ? response.json() : Promise.reject(new Error('Failed to load data from server'))
+        const apiKey = "a1765436a53fce9de8bc00af314f1102"
+        const city = "Kinshasa"
+
+fetch(`https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`)
+.then(isOk) // <= Use `isOk` function here key a1765436a53fce9de8bc00af314f1102
+.then(data => {
+  console.log(data) // Prints result from `response.json()`
+})
+.catch(error => console.error(error))
+    </script>
+</body>
+</html>
