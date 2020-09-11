@@ -1,0 +1,22 @@
+section {
+  height: 600px;
+  width: 100vw;
+  color: white;
+  background: url("../assets/1.jpg");
+  /* overflow: hidden; */
+  background-size: cover;
+  background-position: center;
+  /* background: #58ffd2; */
+  /* background: linear-gradient(rgba(29, 38, 113, 0.9), rgba(195, 55, 100, 0.9)); */
+}
+
+section::before {
+  content: "";
+  background: #58ffd2;
+  width: 100%;
+  opacity: 0.5;
+}
+
+/* img {
+      object-fit: cover;
+  } */

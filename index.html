@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="src/css/style.css" />
+    <title>Wmeteo</title>
+  </head>
+  <body>
+    <section>
+      <h1>Wmeteo</h1>
+      <form>
+        <input
+          type="search"
+          name="search"
+          s
+          id="search"
+          placeholder="type the city"
+        />
+        <input type="submit" value="Go" />
+      </form>
+      <h3 id="city"></h3>
+
+      <div class="temperature">
+        <p>Today's temp</p>
+        <p id="main">Temp: <span></span> <sup>°</sup>C</p>
+        <p id="min">Min: <span></span> <sup>°</sup>C</p>
+        <p id="max">Max: <span></span> <sup>°</sup>C</p>
+      </div>
+    </section>
+    <script src="src/js/app.js"></script>
+  </body>
+</html>
