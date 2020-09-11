@@ -1,0 +1,9 @@
+{
+  "name": "wmeteo",
+  "short_name": "wmeteo",
+  "start_url": "/",
+  "background_color": "#3498DB",
+  "theme_color": "#34495E",
+  "orientation": "portrait-primary",
+  "display": "standalone"
+}
